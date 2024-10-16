@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2024 IT鐵人賽 Day14 -計時器 setInterval()、clearInterval</title>
+  </head>
+  <body>
+    <h1 class="time"></h1>
+    <script>
+      const time = document.querySelector(".time");
+      let idx = 0;
+      time.innerHTML = idx;
+
+      const timer = setInterval(() => {
+        idx++;
+        time.innerHTML = idx;
+        if (idx >= 15) {   // 條件大於等於15
+          clearInterval(timer);  // 關閉計時器
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

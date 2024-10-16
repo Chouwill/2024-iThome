@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 class="title">我尚未被更改</h2>
+
+    <button class="Btn">按鈕</button>
+  </body>
+
+  <script>
+    const title = document.querySelector(".title");
+
+    console.log(title);
+
+    const Btn = document.querySelector(".Btn");
+    console.log(Btn);
+
+    function UpdateTitle() {
+      title.innerHTML = "我被更改了";
+    }
+
+    Btn.addEventListener("click", UpdateTitle);
+  </script>
+</html>

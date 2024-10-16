@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 class="innerHTML">增加innerHTML</h2>
+
+    <h2 class="innerText">增加innerText</h2>
+
+    <button class="EditBtn">統一增加修改</button>
+
+    <script>
+      const EditHtml = document.querySelector(".innerHTML");
+      console.log(EditHtml);
+
+      const EditText = document.querySelector(".innerText");
+      console.log(EditText);
+
+      const EditBtn = document.querySelector(".EditBtn");
+      console.log(EditBtn);
+
+      function Update() {
+        // 修改 innerHTML 的 CSS 樣式和內容
+        EditHtml.style.color = "red";
+        EditHtml.innerHTML = "<strong>已修改的 innerHTML</strong>，包含 <em>HTML</em> 標籤";
+
+        // 修改 innerText 的 CSS 樣式和內容
+        EditText.style.color = "orange";
+        EditText.style.fontSize = "15px";
+        EditText.innerText = "<strong>已修改的 innerHTML</strong>，包含 <em>HTML</em> 標籤";
+      }
+
+      EditBtn.addEventListener("click", Update);
+    </script>
+  </body>
+</html>

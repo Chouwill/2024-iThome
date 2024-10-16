@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>計時器 setTimeout()</title>
+  </head>
+  <body>
+    <h1 class="time"></h1>
+
+    <script>
+      const time = document.querySelector(".time");
+
+      let status = "5秒後執行";
+      time.innerHTML = status;
+
+      setTimeout(() => {
+        status = "開始執行";
+
+        time.innerHTML = status;
+      }, 5000);
+      setTimeout(() => {
+        status = "結束";
+        time.innerHTML = status;
+      }, 8000);
+    </script>
+  </body>
+</html>

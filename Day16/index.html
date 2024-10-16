@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <button class="leftBTN">上一張</button>
+      <h2 class="text">尚未有內容</h2>
+      <button class="rightBTN">下一張</button>
+      <h2 class="pageIdxNUM">1/5</h2>
+    </div>
+
+    <script>
+      // 步驟 2：JavaScript 變數初始化
+      const leftBTN = document.querySelector(".leftBTN");
+      console.log(leftBTN);
+
+      const rightBTN = document.querySelector(".rightBTN");
+      console.log(rightBTN);
+
+      const pageIdxNUM = document.querySelector(".pageIdxNUM");
+      console.log(pageIdxNUM);
+
+      const text = document.querySelector(".text");
+      console.log(text);
+
+      // 步驟 3：初始化頁面索引和內容陣列
+      let pageIdx = 0;
+
+      const Arr = ["你好嗎???", "我是XXXX", "很高興認識你"];
+
+      // 步驟 4：添加按鈕點擊事件處理器
+      leftBTN.addEventListener("click", () => {
+        if (pageIdx > 0) {
+          pageIdx -= 1;
+          changeText();
+        }
+      });
+
+      rightBTN.addEventListener("click", () => {
+        if (pageIdx < Arr.length - 1) {
+          pageIdx += 1;
+          changeText();
+        }
+      });
+
+      // 步驟 5：定義 changeText 函數
+      function changeText() {
+        pageIdxNUM.innerHTML = `${pageIdx + 1}/${Arr.length}`;
+        text.innerHTML = Arr[pageIdx];
+      }
+
+      // 步驟 6：初始化顯示內容
+      changeText();
+    </script>
+  </body>
+</html>

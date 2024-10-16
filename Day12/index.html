@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>增加、移除classlist</title>
+  </head>
+  <style>
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 15px;
+    }
+    a {
+      padding: 20px 50px;
+      background-color: #31a080;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 50px;
+    }
+    .list {
+      display: none;
+      width: 200px;
+      background-color: orange;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .list.show {
+      display: flex;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <a href="#" class="OpenBtn">展開選單</a>
+      <a href="#" class="CloseBtn">關閉選單</a>
+
+
+      <div class="Textlist">
+        <ul class="list">
+          <li>事件1</li>
+          <li>事件2</li>
+          <li>事件3</li>
+          <li>事件4</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const OpenBtn = document.querySelector(".OpenBtn");
+      console.log(OpenBtn);
+      const CloseBtn = document.querySelector(".CloseBtn");
+      console.log(OpenBtn);
+
+      const OpenList = document.querySelector(".list");
+      console.log(OpenList);
+
+      const TextList = document.querySelector(".Textlist");
+      console.log(TextList);
+
+
+
+      OpenBtn.addEventListener("click", () => {
+        OpenList.classList.add("show");  // 增加
+      });
+
+
+
+      CloseBtn.addEventListener("click", () => {
+        OpenList.classList.remove("show");  //移除
+      });
+    </script>
+  </body>
+</html>
